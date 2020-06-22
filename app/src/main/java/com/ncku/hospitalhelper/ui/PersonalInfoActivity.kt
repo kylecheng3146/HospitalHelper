@@ -8,12 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ncku.hospitalhelper.R
 import kotlinx.android.synthetic.main.activity_web.*
 
-
 /**
- * Created by Kevin on 2020/6/20.
+ * Created by Kevin on 2020/6/22.
  */
 
-class WebViewActivity : AppCompatActivity(){
+class PersonalInfoActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +26,6 @@ class WebViewActivity : AppCompatActivity(){
                 return true
             }
         }
-        web.loadUrl("https://nckupharmacy.hosp.ncku.edu.tw/newhomepage/AOPDno_Result1_RWD.asp?sid=R123978891&chart_no=17836778")
+        web.loadUrl("https://service.hosp.ncku.edu.tw/Tandem/QueryResultUI.aspx?Lang=&skv=5P4UVD7cvmMC7mqyoHkLFkcI7%2B%2FCFs1nLpiduujdzlhYrbsyxKARmw%3D%3D")
     }
 }

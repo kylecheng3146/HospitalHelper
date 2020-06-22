@@ -31,6 +31,12 @@
 
         <activity android:name=".ui.WebViewActivity"/>
         <activity android:name=".ui.ScheduleActivity"/>
+        <activity android:name=".ui.RegisterActivity"/>
+        <activity android:name=".ui.PillActivity"/>
+        <activity android:name=".ui.BloodActivity"/>
+        <activity android:name=".ui.PersonalInfoActivity"/>
+
+
     </application>
 
 </manifest>
