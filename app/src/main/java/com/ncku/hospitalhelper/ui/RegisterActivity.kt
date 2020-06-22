@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.mvvm.utils.SharePrefsUtils
 import com.ncku.hospitalhelper.R
+import com.ncku.hospitalhelper.utils.CommonUtils
 import kotlinx.android.synthetic.main.activity_register.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -57,6 +58,8 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 SharePrefsUtils.putId(this,et_identifier.text.toString())
                 SharePrefsUtils.putChartNo(this,et_number.text.toString())
                 SharePrefsUtils.putBirthday(this,et_birthday.text.toString())
+                CommonUtils.showMessage(this,"註冊個人資訊成功")
+                this.finish()
             }
         }
     }

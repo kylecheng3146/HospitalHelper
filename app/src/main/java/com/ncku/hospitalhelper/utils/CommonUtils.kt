@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.ncku.hospitalhelper.R
 import java.util.* // ktlint-disable
 
 object CommonUtils {
@@ -26,4 +27,25 @@ object CommonUtils {
     private val msgToasts = ArrayList<Toast>()
     lateinit var progressDialog: ProgressDialog
     var manager: FragmentManager? = null
+
+    /**
+     * 顯示提示訊息
+     * @param activity [當前頁面]
+     * @param msg [訊息]
+     */
+    fun showMessage(context: Context?, msg: String?) {
+        val t = Toast.makeText(context, msg, Toast.LENGTH_SHORT)
+        (context as AppCompatActivity).runOnUiThread {
+            t.show()
+        }
+        msgToasts.add(t)
+    }
+
+    /**
+     * 移除所有Toast訊息
+     */
+    fun killAllMessage() {
+        for (t in msgToasts) t.cancel()
+        msgToasts.clear()
+    }
 }
