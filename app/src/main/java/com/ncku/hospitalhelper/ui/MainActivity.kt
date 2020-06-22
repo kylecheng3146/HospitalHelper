@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.mvvm.utils.SharePrefsUtils
 import com.ncku.hospitalhelper.R
+import com.ncku.hospitalhelper.utils.CommonUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -29,15 +31,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.button3 -> {
-                val intent = Intent(this, WebViewActivity::class.java)
-                // start your next activity
-                startActivity(intent)
+                if(!SharePrefsUtils.getChartNo(this).isNullOrEmpty()){
+                    val intent = Intent(this, WebViewActivity::class.java)
+                    // start your next activity
+                    startActivity(intent)
+                }else{
+                    CommonUtils.showMessage(this,"請先註冊個人資訊")
+                }
             }
 
             R.id.button4 -> {
-                val intent = Intent(this, PersonalInfoActivity::class.java)
-                // start your next activity
-                startActivity(intent)
+                if(!SharePrefsUtils.getChartNo(this).isNullOrEmpty()) {
+                    val intent = Intent(this, PersonalInfoActivity::class.java)
+                    // start your next activity
+                    startActivity(intent)
+                }else{
+                    CommonUtils.showMessage(this,"請先註冊個人資訊")
+                }
             }
 
             R.id.button5 -> {

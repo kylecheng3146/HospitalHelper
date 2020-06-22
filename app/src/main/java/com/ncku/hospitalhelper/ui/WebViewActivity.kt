@@ -5,6 +5,7 @@ import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
+import com.mvvm.utils.SharePrefsUtils
 import com.ncku.hospitalhelper.R
 import kotlinx.android.synthetic.main.activity_web.*
 
@@ -27,6 +28,7 @@ class WebViewActivity : AppCompatActivity(){
                 return true
             }
         }
-        web.loadUrl("https://nckupharmacy.hosp.ncku.edu.tw/newhomepage/AOPDno_Result1_RWD.asp?sid=R123978891&chart_no=17836778")
+//        R123978891 17836778
+        web.loadUrl(String.format("https://nckupharmacy.hosp.ncku.edu.tw/newhomepage/AOPDno_Result1_RWD.asp?sid=%s&chart_no=%s",SharePrefsUtils.getId(this),SharePrefsUtils.getChartNo(this)))
     }
 }
